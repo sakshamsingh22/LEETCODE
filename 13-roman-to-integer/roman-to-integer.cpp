@@ -10,10 +10,10 @@ public:
 
         int total = 0;
 
-        for(int i = 0; i < s.length(); i++) {
+        for(int i = 0; i <= s.length(); i++) {
 
             // agar current chota hai next se → subtract
-            if(i < s.length()-1 && mp[s[i]] < mp[s[i+1]]) {
+            if(i < s.length() && mp[s[i]] < mp[s[i+1]]) {
                 total -= mp[s[i]];
             }
             else {
