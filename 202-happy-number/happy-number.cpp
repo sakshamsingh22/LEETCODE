@@ -1,22 +1,32 @@
 class Solution {
 public:
-    bool isHappy(int n) {
-        set<int>s;
-        
-        while(n!=1){
-            if(s.count(n)){
-                return false;
-            }
-            s.insert(n);
+  int fun(int n){
             int sum=0;
-            int digit;
             while(n>0){
-                digit=n%10;
-                sum=sum+digit*digit;
+                int dig=n%10;
+                sum+=dig*dig;
                 n=n/10;
+
             }
-            n=sum;
+            return sum;
         }
-        return true;
+
+    
+    bool isHappy(int n) {
+        int slow = n;
+        int fast =fun(n);
+        while(fast!=1 && slow!=fast){
+            slow=fun(slow);
+            fast=fun(fast);
+            fast=fun(fast);
+        }
+        if(fast==1){
+            return true;
+        }
+        else
+        return false;
+
+
     }
-};
+
+    };
