@@ -1,6 +1,8 @@
 class Solution {
 public:
     int subarraySum(vector<int>& nums, int k) {
+
+        // Brute force
         int n=nums.size();
         int count=0;
         for(int i=0;i<n;i++){
