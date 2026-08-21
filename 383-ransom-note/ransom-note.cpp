@@ -9,12 +9,11 @@ public:
         for(int i=0;i<ransomNote.size();i++){
             need[ransomNote[i]]++;
         }
-        for(auto i: need){
-          if(have[i.first] < i.second){
+       for (auto i : need) {
+          if (have[i.first] < need[i.first]) {
              return false;
-
-        }
-        }
+    }
+}
         return true;
 
         
